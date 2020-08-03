@@ -1,0 +1,335 @@
+/*font-family: 'Nunito', sans-serif;*/
+/*font-family: 'Recursive', sans-serif;*/
+/*font-family: 'Teko', sans-serif;*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Recursive', sans-serif;
+}
+
+.frame {
+  position: fixed;
+  width: 90%;
+  height: 90vh;
+  border-radius: 1rem;
+  z-index: 9;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .2), 0 0 0 100px white;
+  overflow: hidden;
+}
+
+.frame .left-background,
+.frame .right-background {
+  position: absolute;
+  bottom: 0;
+  width: 5vw;
+  height: 5vw;
+
+  opacity: 0;
+  z-index: 0;
+  transition: 1s ease 0.2s;
+}
+
+.frame .left-background {
+  left: 0;
+  border-radius: 0 100% 0 0;
+  background: linear-gradient(45deg, #ce93d8, #ff8a65);
+}
+
+.frame .right-background {
+  right: 0;
+  border-radius: 100% 0 0 0;
+  background: linear-gradient(-45deg, #b3d4fc, #f06292);
+}
+
+.left-part .frame .left-background,
+.right-part .frame .right-background {
+  width: 200vw;
+  height: 200vw;
+  opacity: 1;
+}
+
+.frame .upper-background {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+
+  opacity: 1;
+  z-index: 1;
+  transition: transform 0.4s linear;
+}
+
+.right-part .upper-background,
+.left-part .upper-background {
+  transform: translateY(-100%) skewY(20deg);
+  z-index: -1;
+}
+
+.frame .left-button,
+.frame .right-button {
+  font-family: 'Nunito', sans-serif;
+
+  text-decoration: none;
+  position: absolute;
+  bottom: 8%;
+  z-index: 8;
+  height: 2em;
+  width: 8em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 0 1em 0 0;
+  background: #ffffff;
+
+  border-radius: 2em;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0);
+  transition: 0.3s ease 0.1s;
+}
+
+.frame .right-button {
+  left: 52%;
+}
+
+.frame .left-button {
+  right: 52%;
+}
+
+.right-part .frame .right-button,
+.left-part .frame .left-button {
+  background: white;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .2);
+  width: 95%;
+  height: 95%;
+  bottom: 0;
+  border: 1px solid rgba(0, 0, 0, 0);
+  z-index: 10;
+}
+
+.right-part .frame .right-button {
+  left: 5%;
+  border-radius: 1rem 0 0 0;
+  transform-origin: left bottom;
+}
+
+.left-part .frame .left-button {
+  right: 5%;
+  border-radius: 0 1rem 0 0;
+  transform-origin: right bottom;
+}
+
+.text-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  margin: 10% 20%;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.text-container small,
+.text-container p {
+}
+
+.text-container small {
+  font-size: 3rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.text-container p {
+  font-size: 4rem;
+  font-family: 'Teko', sans-serif;
+  opacity: 0;
+  animation: top-fade 1s forwards 3.6s;
+}
+
+@keyframes top-fade {
+  from {
+    transform: translateY(-20%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.text-container h1 {
+  font-size: 7rem;
+  line-height: 0.8em;
+  font-weight: 900;
+  font-family: 'Nunito', sans-serif;
+}
+
+#name {
+  opacity: 0.8;
+}
+
+#name path:nth-of-type(1){
+  stroke-dasharray: 177.557861328125;
+  stroke-dashoffset: 177.557861328125;
+  animation: stroke-animation 1s ease forwards,
+  fill 0.3s ease forwards 1s;
+}
+
+#name path:nth-of-type(2){
+  stroke-dasharray: 83.18795776367188;
+  stroke-dashoffset: 83.18795776367188;
+  animation: stroke-animation 1s ease forwards 0.3s,
+  fill 0.3s ease forwards 1.2s;
+}
+
+#name path:nth-of-type(3){
+  stroke-dasharray: 436.69061279296875;
+  stroke-dashoffset: 436.69061279296875;
+  animation: stroke-animation 1s ease forwards 0.6s,
+  fill 0.3s ease forwards 1.4s;
+}
+
+#name path:nth-of-type(4){
+  stroke-dasharray: 381.2684326171875;
+  stroke-dashoffset: 381.2684326171875;
+  animation: stroke-animation 1s ease forwards 0.9s,
+  fill 0.3s ease forwards 1.6s;
+}
+
+#name path:nth-of-type(5){
+  stroke-dasharray: 286.28363037109375;
+  stroke-dashoffset: 286.28363037109375;
+  animation: stroke-animation 1s ease forwards 1.2s,
+  fill 0.3s ease forwards 1.8s;
+}
+
+#name path:nth-of-type(6){
+  stroke-dasharray: 229.9564666748047;
+  stroke-dashoffset: 229.9564666748047;
+  animation: stroke-animation 1s ease forwards 1.5s,
+  fill 0.3s ease forwards 2s;
+}
+
+#name path:nth-of-type(7){
+  stroke-dasharray: 282.7523193359375;
+  stroke-dashoffset: 282.7523193359375;
+  animation: stroke-animation 1s ease forwards 1.8s,
+  fill 0.3s ease forwards 2.2s;
+}
+
+#name path:nth-of-type(8){
+  stroke-dasharray: 286.28350830078125;
+  stroke-dashoffset: 286.28350830078125;
+  animation: stroke-animation 1s ease forwards 2.1s,
+  fill 0.3s ease forwards 3.1s;
+}
+
+@keyframes stroke-animation {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fill {
+  from {
+    fill: rgba(0, 0, 0, 0);
+  }
+  to {
+    fill: rgba(0, 0, 0, 1);
+  }
+}
+
+.rainbow-container {
+  position: absolute;
+  height: 2%;
+  width: 100%;
+  bottom: 0;
+  z-index: 10;
+  display: flex;
+}
+
+.rainbow-container > div {
+  width: 25%;
+  transform-origin: bottom;
+}
+
+.rainbow-container .color-1 {
+  background-color: #ce93d8;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.rainbow-container .color-2 {
+  background-color: #ff8a65;
+  height: 100%;
+  transition: 0.3s 0.1s;
+}
+
+.rainbow-container .color-3 {
+  background-color: #f06292;
+  height: 100%;
+  transition: 0.3s 0.2s;
+}
+
+.rainbow-container .color-4 {
+  background-color: #b3d4fc;
+  height: 100%;
+  transition: 0.3s 0.3s;
+}
+
+.left-part .rainbow-container > div,
+.right-part .rainbow-container > div {
+  transform: translateY(100%)
+}
+
+@media screen and (max-width: 768px) {
+  .frame .left-button,
+  .frame .right-button {
+    font-size: 1.5rem;
+  }
+
+  .text-container {
+    margin: 10% 10%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  html {
+    font-size: 14px;
+  }
+
+  .text-container svg {
+    width: 100%;
+  }
+
+  .text-container p {
+    font-size: 3rem;
+    line-height: 1em;
+  }
+
+  .frame .left-button,
+  .frame .right-button {
+    width: 6em;
+    font-size: 1.3rem;
+  }
+}
+
+
