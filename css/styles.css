@@ -221,18 +221,30 @@ body {
 
 .contact-links-container {
   letter-spacing: 0.5em;
-
-  transform: translateY(-100%);
-  transition: 0.8s ease 0.3s;
+  opacity: 0;
+  transform: translateY(-1rem);
 }
 
 .left-part .contact-links-container {
+  opacity: 1;
   transform: translateY(0);
+  transition: opacity 0.8s linear 0.8s, transform 0.5s ease 0.8s;
+}
+
+.contact-container {
+  opacity: 0;
+  transform: translateY(-2rem);
+}
+
+.left-part .contact-container {
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.5s ease 0.5s;
 }
 
 .contact-links-container a {
-
-  display: inline-block;position: relative;
+  display: inline-block;
+  position: relative;
   width: 2.2em;
   height: 2.2em;
   text-align: center;
@@ -244,27 +256,7 @@ body {
   transition: 0.2s;
 }
 
-.contact-links-container .icon-linkedin {
-  color: rgb(0, 119, 181);
-  background-color: rgba(0, 119, 181, 0.2);
-}
-
 .contact-links-container a:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 0 solid rgba(0, 119, 181, 0.4);
-  z-index: -1;
-  transition: 0.2s;
-  transform-origin: center center;
-}
-
-.contact-links-container a:hover:after {
   content: "";
   display: block;
   position: absolute;
@@ -273,9 +265,22 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 50%;
-  border: 5px solid rgba(0, 119, 181, 0.4);
   z-index: -1;
-  /*background-color: rgba(0, 119, 181, 0.2);*/
+  transition: 0.3s;
+  opacity: 0;
+}
+
+.contact-links-container a:hover:after {
+  opacity: 1
+}
+
+.contact-links-container .icon-linkedin {
+  color: rgb(0, 119, 181);
+  background-color: rgba(0, 119, 181, 0.2);
+}
+
+.contact-links-container .icon-linkedin:after {
+  border: 5px solid rgba(0, 119, 181, 0.4);
 }
 
 .contact-links-container .icon-facebook {
@@ -283,9 +288,17 @@ body {
   background-color: rgba(24, 119, 242, 0.2);
 }
 
+.contact-links-container .icon-facebook:after {
+  border: 5px solid rgba(24, 119, 242, 0.4);
+}
+
 .contact-links-container .icon-github {
   color: rgb(36, 41, 46);
   background-color: rgba(36, 41, 46, 0.2);
+}
+
+.contact-links-container .icon-github:after {
+  border: 5px solid rgba(36, 41, 46, 0.4);
 }
 
 .text-container {
@@ -484,7 +497,7 @@ body {
     letter-spacing: 0.5em;
     position: absolute;
     bottom: 10%;
-    transform: translateY(100%);
+    transform: translateY(50%);
   }
 }
 
