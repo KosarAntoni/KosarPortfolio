@@ -491,7 +491,15 @@ body {
   }
 
   .contact-container > a:first-of-type {
-    font-size: 1.1em;
+    font-size: 1.2em;
+  }
+
+  .contact-container a span {
+    line-height: 1.6em;
+  }
+
+  .contact-container > a:last-of-type {
+    font-size: 0.7em;
   }
 
   .contact-links-container {
