@@ -27,7 +27,7 @@
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body class="right-part">
 
 <div class="frame">
   <div class="upper-background"></div>
@@ -108,7 +108,28 @@
     </div>
   </div>
   <div class="right-button">
-    <h2>Projects</h2></div>
+    <h2>Projects</h2>
+    <div class="projects-container">
+      <div class="project-card">
+        <img src="img/kosarantoni.github.io_lotos_.jpg" alt="">
+        <div class="project_info-container">
+          <h3>Lorem ipsum</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem labore sapiente suscipit.</p>
+          <p class="info-technologies">
+            <span class="icon-html5"><span>HTML5</span></span>
+            <span class="icon-css3"><span>CSS3</span></span>
+            <span class="icon-js-square-brands"><span>JavaScript</span></span>
+            <span class="icon-react-brands"><span>React</span></span>
+          </p>
+        </div>
+        <div class="buttons-container">
+          <a href="#" class="card-button">Live</a>
+          <a href="#" class="card-button">Code</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
   <div class="rainbow-container">
     <div class="color-1"></div>
     <div class="color-2"></div>
@@ -126,7 +147,7 @@
   leftButton.addEventListener("mouseout", () => bodyElement.classList.remove("left-part"));
 
   rightButton.addEventListener("mouseover", () => bodyElement.classList.add("right-part"));
-  rightButton.addEventListener("mouseout", () => bodyElement.classList.remove("right-part"));
+  // rightButton.addEventListener("mouseout", () => bodyElement.classList.remove("right-part"));
 
   let vh = window.innerHeight * 0.01;
   // Then we set the value in the --vh custom property to the root of the document
