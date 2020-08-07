@@ -163,6 +163,27 @@ body {
   font-size 0.2s ease 0.4s;
 }
 
+.left-button .minimize-button,
+.right-button .minimize-button {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  cursor: pointer;
+
+  font-size: 2rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.left-part .frame .left-button .minimize-button,
+.right-part .frame .right-button .minimize-button {
+  transform: translate(-50%, 10%);
+  visibility: visible;
+  opacity: 1;
+  transition: 0.2s ease 1.3s;
+}
 
 /*  CONTACT SECTION STYLES    */
 
@@ -343,6 +364,10 @@ body {
 
   opacity: 0;
   transform: translateX(50%) ;
+}
+
+.flickity-slider {
+  margin-left: 1%;
 }
 
 .right-part .project-card {
@@ -680,8 +705,12 @@ body {
   .contact-links-container {
     letter-spacing: 0.5em;
     position: absolute;
-    bottom: 10%;
+    bottom: 15%;
     transform: translateY(50%);
+  }
+
+  .flickity-slider {
+    margin-left: 3%;
   }
 }
 
