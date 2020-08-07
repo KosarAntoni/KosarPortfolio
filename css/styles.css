@@ -107,6 +107,13 @@ body {
   color: rgba(0, 0, 0, 0.6);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0);
   transition: 0.3s ease 0.1s;
+  cursor: pointer;
+}
+
+.frame .left-button:hover,
+.frame .right-button:hover {
+  border: 1px solid rgba(0, 0, 0, 0);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 .frame .right-button {
@@ -126,6 +133,8 @@ body {
   bottom: 0;
   border: 1px solid rgba(0, 0, 0, 0);
   z-index: 10;
+
+  cursor: default;
 }
 
 .right-part .frame .right-button {
@@ -154,7 +163,7 @@ body {
 
 .left-part .frame .left-button h2,
 .right-part .frame .right-button h2 {
-  top: 5%;
+  top: 4%;
   left: 50%;
   transform: translate(-50%, 0);
   font-size: 2em;
@@ -166,7 +175,7 @@ body {
 .left-button .minimize-button,
 .right-button .minimize-button {
   position: absolute;
-  bottom: 5%;
+  bottom: 4%;
   left: 50%;
   transform: translate(-50%, 0);
 
@@ -182,8 +191,16 @@ body {
   transform: translate(-50%, 10%);
   visibility: visible;
   opacity: 1;
-  transition: 0.2s ease 1.3s;
+  transition: transform 0.2s ease 1.3s,
+  opacity 0.2s ease 1.3s,
+  font-size 0.3s ease;
 }
+
+.left-part .frame .left-button .minimize-button:hover,
+.right-part .frame .right-button .minimize-button:hover {
+  font-size: 1.8rem;
+}
+
 
 /*  CONTACT SECTION STYLES    */
 
@@ -327,11 +344,11 @@ body {
 
 .projects-container {
   position: relative;
-  top: 25%;
+  top: 22%;
 
   width: 100%;
   min-width: 80vw;
-  height: 28rem;
+  height: 30rem;
 
   visibility: hidden;
   opacity: 0;
@@ -346,7 +363,7 @@ body {
 
 .project-card {
   width: 20rem;
-  height: 26rem;
+  height: 100%;
   padding: 1rem;
   margin-right: 2rem;
 
@@ -358,12 +375,33 @@ body {
   flex-direction: column;
   justify-content: space-between;
 
-  border-radius: 1rem;
-  background-image: linear-gradient(to top, #fdcbf1 0%, #fdcbf1 1%, #e6dee9 100%);
-  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
-
+  transform: translateX(50%);
   opacity: 0;
-  transform: translateX(50%) ;
+
+  border-radius: 1rem;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.project-card.lotos {
+  background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+}
+
+.hotel-cats {
+  background-image: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+}
+
+.old-portfolio {
+  background: linear-gradient(-180deg, #BCC5CE 0%, #929EAD 98%), radial-gradient(at top left, rgba(255,255,255,0.30) 0%, rgba(0,0,0,0.30) 100%);
+  background-blend-mode: screen;
+}
+
+.snake {
+  background-image: linear-gradient(to top, #9EDC56 0%, #86D42B 100%);
+}
+
+.yoga {
+  background-image: linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
 }
 
 .flickity-slider {
@@ -422,6 +460,7 @@ body {
 
 .info-technologies > span {
   position: relative;
+  cursor: pointer;
 }
 
 .info-technologies > span span {
@@ -665,7 +704,7 @@ body {
 
 @media screen and (max-width: 425px) {
   html {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .text-container svg {
@@ -706,11 +745,24 @@ body {
     letter-spacing: 0.5em;
     position: absolute;
     bottom: 15%;
-    transform: translateY(50%);
+    /*transform: translateY(50%);*/
   }
 
   .flickity-slider {
     margin-left: 3%;
+  }
+
+  .right-part .frame .right-button h2 {
+    top: 3%;
+  }
+
+  .projects-container {
+    top: 20%;
+    /*height: 25rem;*/
+  }
+
+  .right-part .frame .right-button .minimize-button {
+    bottom: 3%;
   }
 }
 
