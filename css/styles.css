@@ -449,6 +449,8 @@ body {
 }
 
 .project_info-container {
+  display: flex;
+  flex-direction: column;
   height: 45%;
 }
 
@@ -458,8 +460,7 @@ body {
 }
 
 .info-technologies {
-  margin-top: 0.5em;
-  margin-bottom: auto;
+  margin-top: auto;
 }
 
 .info-technologies > span {
