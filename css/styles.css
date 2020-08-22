@@ -383,7 +383,11 @@ body {
   box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.project-card.lotos {
+.simple-portfolio {
+  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+.lotos {
   background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
 }
 
